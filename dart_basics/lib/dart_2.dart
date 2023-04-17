@@ -322,9 +322,37 @@ class LinUr {
         }
       }
     }
+    List<num> list = [];
+    for (int i = list1.length - 1; i >= 0; i--) {
+      num l = list1.length - i;
+      num ans = list1[i][list1.length];
+      num delitel;
+      int j = list1[i].length - 2;
+      int k = 0;
+      while (l != 1) {
+        l--;
+        ans -= list1[i][j] * list[k];
+        k++;
+        j--;
+      }
+      delitel = list1[i][j];
+      if (delitel == 0) {
+        print("No answers");
+      }
+      ans = ans / delitel;
+
+      num t = ans;
+      String s = t.toStringAsFixed(1);
+      t = double.parse(s);
+      t == -0 ? t = 0 : 0;
+      ans = t;
+
+      list.add(ans);
+    }
     for (int i = 0; i < list1.length; i++) {
       print(list1[i]);
     }
+    print(list);
   }
 }
 //  [1, 2, 4, 5, 1],
