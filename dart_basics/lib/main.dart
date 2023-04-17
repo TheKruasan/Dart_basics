@@ -42,4 +42,13 @@ void main() {
   // print(admin.getMailSystem());
   num x7 = 27;
   // print(27.sqPow(3).toStringAsFixed(3));
+  LinUr lin = LinUr();
+  List<List<num>> matrix = [
+    [1, 7, 4, 5, 1],
+    [0, 8, 9, 3, 2],
+    [10, 2, 14, 5, 3],
+    [10, 2, 1, 2, 4]
+  ];
+
+  lin.LinearU(matrix);
 }

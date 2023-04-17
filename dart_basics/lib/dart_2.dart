@@ -260,14 +260,82 @@ class UserManager<T extends User> {
 }
 // Конец 8 задания
 
-
 // 9 Заданиe
+class Integral {
+  num n;
+  num x1, x2;
+  Function(num) f;
+  Integral(this.f, this.x1, this.x2, this.n);
 
+  num doIntegral() {
+    num sum = 0;
+    final num h = (x2 - x1) / n;
+
+    while (x1 < x2) {
+      sum += f(x1) * h;
+      x1 += h;
+    }
+    return sum;
+  }
+}
 
 // Конец 9 задания
 
-
 // 10 Заданиe
+class LinUr {
+  LinUr();
+  void LinearU(List<List<num>> list1) {
+    void swap(List<List<num>> list, int a, int b) {
+      num c;
+      for (int i = 0; i < list[0].length; i++) {
+        c = list[a][i];
+        list[a][i] = list[b][i];
+        list[b][i] = c;
+      }
+    }
+
+    list1.sort(((a, b) => b[0].compareTo(a[0])));
+
+    for (int i = 0; i < list1.length - 1; i++) {
+      num flag = 0;
+      if (list1[i][i] == 0) {
+        for (int l = i + 1; l < list1.length; l++);
+        int l = i + 1;
+        while (list1[l][i] == 0 && l < list1.length) {
+          l++;
+        }
+        list1[l][i] != 0 ? swap(list1, l, i) : flag++;
+      }
+      if (flag == 0) {
+        for (int j = i + 1; j < list1.length; j++) {
+          num k;
+
+          k = list1[j][i] / list1[i][i];
+          for (int y = 0; y < list1[0].length; y++) {
+            list1[j][y] = list1[j][y] - k * list1[i][y];
+            num t = list1[j][y];
+            String s = t.toStringAsFixed(1);
+            t = double.parse(s);
+            t == -0 ? t = 0 : 0;
+            list1[j][y] = t;
+          }
+        }
+      }
+    }
+    for (int i = 0; i < list1.length; i++) {
+      print(list1[i]);
+    }
+  }
+}
+//  [1, 2, 4, 5, 1],
+//  [0, 8, 9, 3, 2],
+//  [1, 2, 4, 5, 3],
+//  [7, 3, 1, 2, 4]
 
 
+
+// [7, 3, 1, 2, 4]
+// [1, 2, 4, 5, 1],
+// [1, 2, 4, 5, 3],
+// [0, 8, 9, 3, 2],
 // Конец 10 задания
