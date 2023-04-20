@@ -1,6 +1,6 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
-
+import 'package:flutter/scheduler.dart';
 // Package imports:
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -26,29 +26,28 @@ class MainApp extends StatelessWidget {
       title: ("Flutter demo"),
       home: Scaffold(
         body: Center(
-          child: SvgPicture.asset(
-            'assets/images/fire.svg',
-            semanticsLabel: 'Fire',
-          ),
-          // child: CarouselSlider(
-          //   options: CarouselOptions(height: 400.0),
-          //   items: imgList.map((i) {
-          //     return Builder(
-          //       builder: (BuildContext context) {
-          //         return Container(
-          //           width: MediaQuery.of(context).size.width,
-          //           margin: EdgeInsets.symmetric(horizontal: 5.0),
-          //           decoration: BoxDecoration(
-          //               color: Colors.amber,
-          //               image: DecorationImage(
-          //                 fit: BoxFit.cover,
-          //                 image: NetworkImage(i),
-          //               )),
-          //         );
-          //       },
-          //     );
-          //   }).toList(),
+          // child: SvgPicture.asset(
+          //   'assets/images/fire.svg',
+          //   semanticsLabel: 'Fire',
           // ),
+          child: CarouselSlider(
+            options: CarouselOptions(height: 400.0),
+            items: imgList.map((i) {
+              return Builder(
+                builder: (BuildContext context) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 5.0),
+                    decoration: BoxDecoration(
+                        color: Colors.amber,
+                        image: DecorationImage(
+                          image: NetworkImage(i),
+                        )),
+                  );
+                },
+              );
+            }).toList(),
+          ),
         ),
       ),
     );
