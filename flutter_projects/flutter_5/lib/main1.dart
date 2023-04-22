@@ -18,6 +18,10 @@ class TabItem {
   TabItem(this.title, this.icon);
 }
 
+void openEndDrawer(BuildContext context) {
+  Scaffold.of(context).openEndDrawer();
+}
+
 final List<TabItem> _tabBar = [
   TabItem(
     "Home",
@@ -65,10 +69,46 @@ class _MyApp extends State<MyApp> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Builder(builder: (context) {
         return Scaffold(
           appBar: AppBar(
-            title: Text("Demo flutter"),
+            actions: [
+              Builder(
+                builder: (context) {
+                  return IconButton(
+                    icon: Icon(Icons.person),
+                    onPressed: () {
+                      openEndDrawer(context);
+                    },
+                  );
+                },
+              )
+            ],
+            title: const Text("Demo flutter"),
+          ),
+          endDrawer: Drawer(
+            backgroundColor: Colors.white,
+            child: SafeArea(
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CircleAvatar(
+                      radius: 140,
+                      child: Image.asset("assets/images/1-round.png"),
+                    ),
+                    const Text(
+                      "Дуэйн Скала - Джонсон",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
           body: TabBarView(controller: _tabController, children: [
             Container(

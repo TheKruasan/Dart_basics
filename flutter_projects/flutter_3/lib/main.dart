@@ -53,26 +53,3 @@ class MainApp extends StatelessWidget {
     );
   }
 }
-
-// class _MyHomePage extends StatefulWidget {
-//   const _MyHomePage({Key? key, required this.title}) : super(key: key);
-//   final String title;
-
-//   @override
-//   _MyHomePageState createState() => _MyHomePageState();
-// }
-
-// class _MyHomePageState extends State<_MyHomePage> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(),
-//       body: Center(
-//         child: Column(
-//           mainAxisSize: MainAxisSize.min,
-//           children: <Widget>[Image.network('https://picsum.photos/1200/500')],
-//         ),
-//       ),
-//     );
-//   }
-// }
