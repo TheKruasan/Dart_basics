@@ -1,4 +1,4 @@
-name: neuroland
+name: flutter_6
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -18,12 +18,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/
-    - assets/images/
-  fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-          weight: 800
-        - asset: assets/fonts/Roboto-Black.ttf
-          weight: 400
+   - assets/
+   - assets/images/

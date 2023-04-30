@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Registration extends StatefulWidget {
-  const Registration({super.key});
+class EnterPage extends StatefulWidget {
+  const EnterPage({super.key});
 
   @override
-  State<Registration> createState() => _RegistrationState();
+  State<EnterPage> createState() => _EnterPageState();
 }
 
-class _RegistrationState extends State<Registration> {
+class _EnterPageState extends State<EnterPage> {
   final myController = TextEditingController();
 
   @override
@@ -22,6 +22,8 @@ class _RegistrationState extends State<Registration> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
+          //Widget with arrow photo on top
+
           Align(
             alignment: Alignment.topLeft,
             child: Padding(
@@ -33,6 +35,9 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
           ),
+
+          //Widget with Logo
+
           Align(
             alignment: Alignment.center,
             child: Image.asset(
@@ -41,6 +46,7 @@ class _RegistrationState extends State<Registration> {
               height: 106,
             ),
           ),
+
           Align(
             alignment: Alignment.centerRight,
             child: Padding(
@@ -52,6 +58,7 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
           ),
+
           const Text(
             "Вход в аккаунт",
             style: TextStyle(
@@ -60,36 +67,45 @@ class _RegistrationState extends State<Registration> {
               fontFamily: 'Roboto',
             ),
           ),
+
+          //Two widgets with Text fields
+
           Padding(
             padding: const EdgeInsets.only(
-                top: 30.0, bottom: 10, left: 24, right: 24),
+                top: 20.0, bottom: 10, left: 24, right: 24),
             child: TextField(
               controller: myController,
-              decoration: const InputDecoration(
-                border: InputBorder.none,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 hintText: "Email или телефон",
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   fontFamily: 'Roboto',
                   fontSize: 20,
                 ),
-                fillColor: Color(0xF1F1F1F1),
+                fillColor: const Color(0xF1F1F1F1),
                 filled: true,
               ),
               enabled: true,
               expands: false,
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 30, left: 24, right: 24),
+          Padding(
+            padding: const EdgeInsets.only(bottom: 20, left: 24, right: 24),
             child: TextField(
               decoration: InputDecoration(
-                border: InputBorder.none,
+                border: OutlineInputBorder(
+                  borderSide: BorderSide.none,
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 hintText: "Пароль",
-                hintStyle: TextStyle(
+                hintStyle: const TextStyle(
                   fontFamily: 'Roboto',
                   fontSize: 20,
                 ),
-                fillColor: Color(0xF1F1F1F1),
+                fillColor: const Color(0xF1F1F1F1),
                 filled: true,
               ),
               obscureText: true,
@@ -97,6 +113,9 @@ class _RegistrationState extends State<Registration> {
               expands: false,
             ),
           ),
+
+          //Enter button
+
           Padding(
             padding: const EdgeInsets.only(bottom: 10, left: 24, right: 24),
             child: Container(
@@ -142,6 +161,9 @@ class _RegistrationState extends State<Registration> {
               ),
             ),
           ),
+
+          //Registration button
+
           Padding(
             padding: const EdgeInsets.only(bottom: 0, left: 24, right: 24),
             child: Container(
@@ -164,7 +186,9 @@ class _RegistrationState extends State<Registration> {
                     color: Colors.black,
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/registration_form');
+                },
                 shape: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10))),
               ),
