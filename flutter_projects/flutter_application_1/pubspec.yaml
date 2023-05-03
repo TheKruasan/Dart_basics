@@ -1,4 +1,4 @@
-name: flutter_9
+name: flutter_application_1
 description: A new Flutter project.
 publish_to: 'none'
 version: 0.1.0
@@ -8,11 +8,12 @@ environment:
 
 dependencies:
   build_runner: ^2.3.3
+  json_serializable: ^6.6.1
   dio: ^5.1.1
   flutter:
     sdk: flutter
   http: ^0.13.6
-  json_serializable: ^6.6.1
+  
 
 dev_dependencies:
   flutter_test:
