@@ -21,9 +21,18 @@ class SliverTutorial extends StatelessWidget {
                   fontSize: 16,
                 ),
               ),
-              background: Image.asset(
-                'assets/images/1.jpg',
-                fit: BoxFit.cover,
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Image.asset(
+                    'assets/images/1.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  Container(
+                    height: 273,
+                    color: Colors.black.withOpacity(0.5),
+                  )
+                ],
               ),
             ),
           ),

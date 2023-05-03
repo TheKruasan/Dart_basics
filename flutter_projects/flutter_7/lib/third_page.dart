@@ -1,72 +1,45 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
 
-class ThirdPage extends StatelessWidget {
-  const ThirdPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [
-              Container(
-                margin: const EdgeInsets.only(top: 10, left: 10, right: 10),
-                alignment: Alignment.center,
-                width: double.infinity,
-                child: FloatingActionButton.extended(
-                  label: const Text("Back"),
-                  heroTag: 'butn2',
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(10),
-                alignment: Alignment.center,
-                width: double.infinity,
-                child: FloatingActionButton.extended(
-                  label: const Text("To first Page"),
-                  heroTag: 'butn2',
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/first');
-                  },
-                ),
-              ),
-              Container(
-                alignment: Alignment.center,
-                width: double.infinity,
-                child: FloatingActionButton.extended(
-                  heroTag: 'butn3',
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  label: const Text("To second Page"),
-                  onPressed: () {
-                    Navigator.of(context).pushNamed('/second');
-                  },
-                ),
-              ),
-              Container(
-                height: 400,
-                alignment: Alignment.center,
-                child: const Text(
-                  "Third Page",
-                  style: TextStyle(fontSize: 26),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
+// class ThirdPage extends StatelessWidget {
+//   static const String routeName = "/third";
+//   ThirdPage({super.key});
+//   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       debugShowCheckedModeBanner: false,
+//       home: Scaffold(
+//         key: _scaffoldKey,
+//         appBar: AppBar(
+//           title: const Text("Artists"),
+//         ),
+//         drawer: Drawer(
+//           backgroundColor: Colors.white,
+//           child: Column(
+//             children: [
+//               Image.asset('assets/images/7292.png'),
+//               ListTile(
+//                 tileColor: Colors.blue,
+//                 subtitle: const Text('home page'),
+//                 leading: const Icon(Icons.home),
+//                 trailing: const Icon(Icons.arrow_forward),
+//                 title: const Text("Home"),
+//                 onTap: () {
+//                   _scaffoldKey.currentState?.closeDrawer();
+//                 },
+//               ),
+//               ListTile(
+//                 leading: const Icon(Icons.accessibility_rounded),
+//                 trailing: const Icon(Icons.arrow_forward),
+//                 title: const Text("Actors"),
+//                 onTap: () {
+//                   Navigator.of(context).pushNamed('/second');
+//                 },
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }

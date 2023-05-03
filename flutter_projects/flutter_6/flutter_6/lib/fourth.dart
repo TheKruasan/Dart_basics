@@ -26,8 +26,8 @@ class TextFieldExample extends StatefulWidget {
 class _TextFieldExampleState extends State<TextFieldExample> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return Material(
+      child: SafeArea(
         child: Container(
           margin: const EdgeInsets.all(20),
           child: const TextField(
@@ -36,6 +36,26 @@ class _TextFieldExampleState extends State<TextFieldExample> {
               hoverColor: Colors.pink,
               fillColor: Colors.pink,
               focusColor: Colors.pink,
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+                borderSide: BorderSide(
+                  color: Colors.pink,
+                  style: BorderStyle.none,
+                  width: 1.0,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
+                ),
+                borderSide: BorderSide(
+                  color: Colors.pink,
+                  style: BorderStyle.none,
+                  width: 1.0,
+                ),
+              ),
               hintText: "search something",
               helperText: "helper text",
               border: OutlineInputBorder(
@@ -43,7 +63,7 @@ class _TextFieldExampleState extends State<TextFieldExample> {
                   Radius.circular(10),
                 ),
                 borderSide: BorderSide(
-                  // color: Colors.pink,
+                  color: Colors.pink,
                   style: BorderStyle.none,
                   width: 10.0,
                 ),

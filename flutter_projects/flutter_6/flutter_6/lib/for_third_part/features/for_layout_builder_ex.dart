@@ -14,38 +14,40 @@ class _LayoutBuilderExampleState extends State<LayoutBuilderExample> {
   });
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-            color: Colors.white,
-            child: LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints constraints) {
-                // ignore: no_leading_underscores_for_local_identifiers
-                double _width = constraints.constrainWidth();
-                return _width > 600
-                    ? ListView.builder(
-                        itemCount: _data.length,
-                        itemBuilder: (context, index) => _data[index],
-                        scrollDirection: Axis.horizontal,
-                      )
-                    : ListView.builder(
-                        itemCount: _data.length,
-                        itemBuilder: (context, index) => _data[index],
-                        scrollDirection: Axis.horizontal,
-                      );
-              },
+    return Material(
+      child: SafeArea(
+        child: Column(children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              // color: Colors.white,
+              child: LayoutBuilder(
+                builder: (BuildContext context, BoxConstraints constraints) {
+                  // ignore: no_leading_underscores_for_local_identifiers
+                  double _width = constraints.constrainWidth();
+                  return _width > 500
+                      ? ListView.builder(
+                          itemCount: _data.length,
+                          itemBuilder: (context, index) => _data[index],
+                          scrollDirection: Axis.horizontal,
+                        )
+                      : ListView.builder(
+                          itemCount: _data.length,
+                          itemBuilder: (context, index) => _data[index],
+                          scrollDirection: Axis.horizontal,
+                        );
+                },
+              ),
             ),
           ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Container(
-            color: Colors.white,
-          ),
-        )
-      ]),
+          Expanded(
+            flex: 2,
+            child: Container(
+              color: Colors.white,
+            ),
+          )
+        ]),
+      ),
     );
   }
 }

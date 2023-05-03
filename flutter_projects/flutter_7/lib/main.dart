@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_7/actors_page.dart';
 import 'package:flutter_7/first_page.dart';
 import 'package:flutter_7/secong_page.dart';
 import 'package:flutter_7/third_page.dart';
@@ -20,10 +21,25 @@ class MainApp extends StatelessWidget {
           return FirstPage();
         });
       },
-      routes: {
-        '/': (BuildContext context) => FirstPage(),
-        '/second': (BuildContext context) => SecondPage(),
-        '/third': (BuildContext context) => const ThirdPage()
+      onGenerateRoute: (RouteSettings settings) {
+        switch (settings.name) {
+          case FirstPage.routeName:
+            return MaterialPageRoute(builder: (context) => FirstPage());
+          case SecondPage.routeName:
+            return MaterialPageRoute(builder: (context) => const SecondPage());
+          case ActorPage.routeName:
+            final args = settings.arguments as Map<String, dynamic>;
+
+            return MaterialPageRoute(builder: (BuildContext context) {
+              if (args.containsKey('actor')) {
+                return ActorPage(
+                  actor: args['artor'],
+                );
+              }
+              return const Text("Fail");
+            });
+        }
+        return null;
       },
     );
   }
