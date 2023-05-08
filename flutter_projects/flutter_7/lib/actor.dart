@@ -21,7 +21,7 @@ class Actor {
 Future<List> fetchActor() async {
   final response = await http.get(Uri.parse(
       'https://raw.githubusercontent.com/leocoderu/Flutter-SkillboxStudy/main/07_Navigation/albums_route/assets/files/artists.json'));
-  List actorsList = [];
+  List<Actor> actorsList = [];
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,
     // then parse the JSON.
@@ -29,6 +29,7 @@ Future<List> fetchActor() async {
     for (var element in parsedList) {
       actorsList.add(Actor.fromJson(element));
     }
+    print(actorsList.first.name);
     return actorsList;
   } else {
     throw Exception('Failed to load album');

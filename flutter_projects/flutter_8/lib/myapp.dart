@@ -26,6 +26,7 @@ class _MyAppState extends State<MyApp> {
                     Expanded(
                       flex: 4,
                       child: TextField(
+                        
                         decoration: const InputDecoration(
                           hintText: "Enter Text",
                           enabledBorder: OutlineInputBorder(

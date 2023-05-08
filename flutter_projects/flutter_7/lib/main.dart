@@ -33,7 +33,7 @@ class MainApp extends StatelessWidget {
             return MaterialPageRoute(builder: (BuildContext context) {
               if (args.containsKey('actor')) {
                 return ActorPage(
-                  actor: args['artor'],
+                  actor: args['actor'],
                 );
               }
               return const Text("Fail");

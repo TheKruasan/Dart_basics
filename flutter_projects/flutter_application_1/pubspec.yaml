@@ -12,13 +12,19 @@ dependencies:
   dio: ^5.1.1
   flutter:
     sdk: flutter
-  http: ^0.13.6
+ 
   
-
 dev_dependencies:
+  
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
+  carousel_slider:
+      git:
+        url: https://github.com/serenader2014/flutter_carousel_slider 
+        ref: master
 flutter:
   uses-material-design: true
+  assets: 
+  - assets/
+  - assets/images/

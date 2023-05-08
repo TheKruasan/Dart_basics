@@ -1,7 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/hotel.dart';
-import 'package:http/http.dart' as http;
 import 'package:dio/dio.dart';
+import 'package:flutter_application_1/features/hotel_bar.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({super.key});
@@ -13,9 +15,12 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   bool isLoading = false;
-  List<Hotel> _hotels = [];
+  String errorMessage = '';
+  List<HotelBar> hotelBars = [];
+  List<Hotel> hotels = [];
 
-  Dio _dio = Dio();
+  bool hasError = false;
+  final Dio _dio = Dio();
   @override
   void initState() {
     super.initState();
@@ -26,26 +31,47 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       isLoading = true;
     });
+    try {
+      final response = await _dio
+          .get("https://run.mocky.io/v3/ac888dc5-d193-4700-b12c-abb43e289301");
+      var data = response.data;
+      hotels = data.map<Hotel>((hotel) => Hotel.fromJson(hotel)).toList();
 
-    final response = await _dio
-        .get("https://run.mocky.io/v3/ac888dc5-d193-4700-b12c-abb43e289301");
-    var data = response.data;
-    print(data);
+      hotels.forEach((element) {
+        hotelBars.add(
+          HotelBar(hotel: element),
+        );
+      });
+    } on DioError catch (e) {
+      setState(() {
+        errorMessage = e.response?.data['message'];
+        isLoading = false;
+        hasError = true;
+      });
+    }
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
+    print(hotelBars);
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         title: const Text("Title"),
       ),
       body: SafeArea(
-          child: Container(
-        child: GridView(
-          gridDelegate:
-              SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 1),
-        ),
+          child: CustomScrollView(
+        slivers: [
+          SliverList(
+            delegate: SliverChildListDelegate([
+              for (var hot in hotelBars) hot,
+            ]),
+          )
+        ],
       )),
     );
   }

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:json_annotation/json_annotation.dart';
-// import 'package:json_serializable/json_serializable.dart';
-import 'package:build_runner/build_runner.dart';
 
 part 'hotel.g.dart';
 
