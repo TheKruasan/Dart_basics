@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/features/hotel.dart';
+import 'package:flutter_application_1/pages/hotel_page.dart';
+
+// Block of hotel
 
 class HotelBar extends StatelessWidget {
   final Hotel hotel;
+  final AboutHotel aboutHotel;
   HotelBar({
     required this.hotel,
+    required this.aboutHotel,
     super.key,
   });
 
@@ -59,7 +64,13 @@ class HotelBar extends StatelessWidget {
                     child: Container(
                       margin: const EdgeInsets.only(right: 20),
                       child: FloatingActionButton.extended(
-                        onPressed: () {},
+                        heroTag: hotel.uuid,
+                        onPressed: () {
+                          Navigator.of(context)
+                              .push(MaterialPageRoute(builder: (context) {
+                            return HotelPage(hotel: aboutHotel);
+                          }));
+                        },
                         label: const Text("Подробнее"),
                       ),
                     ),

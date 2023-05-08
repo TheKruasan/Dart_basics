@@ -1,11 +1,5 @@
-// ignore_for_file: unused_import, depend_on_referenced_packages
-
 import 'package:flutter/material.dart';
 import 'package:flutter_9/pages/home_page.dart';
-import 'package:http/http.dart';
-import 'package:build_runner/build_runner.dart';
-import 'package:json_serializable/json_serializable.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 void main() {
   return (runApp(MainApp()));
