@@ -56,13 +56,9 @@ class _MainAppState extends State<MainApp> {
                       tag: image.id,
                       child: Card(
                         margin: const EdgeInsets.only(bottom: 10, top: 10),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              radius: 150,
-                              backgroundImage: AssetImage(image.image),
-                            ),
-                          ],
+                        child: CircleAvatar(
+                          radius: 150,
+                          backgroundImage: AssetImage(image.image),
                         ),
                       ),
                     ),
