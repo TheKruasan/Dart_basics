@@ -28,12 +28,12 @@ MainTheme _secondTheme = MainTheme(
   buttonFg: Colors.white,
 );
 bool isFirstTheme = true;
+bool isBig = false;
 
 class _MainPageState extends State<MainPage> {
   double state = 0;
   @override
   Widget build(BuildContext context) {
-    // print(state);
     return Scaffold(
         body: SingleChildScrollView(
           child: MainThemeStyle(
@@ -66,10 +66,19 @@ class _MainPageState extends State<MainPage> {
                       width: MediaQuery.of(context).size.width,
                       color: MainThemeStyle.of(innerContext).bgColor,
                       height: MediaQuery.of(context).size.height - 260,
-                      child: SizedBox(
-                        child: CustomPaint(
-                          willChange: true,
-                          painter: WeatherPainter(state: state),
+                      child: GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isBig = !isBig;
+                          });
+                        },
+                        child: SizedBox(
+                          child: CustomPaint(
+                            willChange: true,
+                            painter: isBig
+                                ? WeatherPainter(state: state)
+                                : WeatherPainter(state: state),
+                          ),
                         ),
                       ),
                     ),
