@@ -35,107 +35,137 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-          child: MainThemeStyle(
-            theme: isFirstTheme ? _firstTheme : _secondTheme,
-            child: Builder(
-              builder: (innerContext) {
-                return Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width,
-                      color: MainThemeStyle.of(innerContext).headerColor,
-                      height: 100,
+        body: MainThemeStyle(
+          theme: isFirstTheme ? _firstTheme : _secondTheme,
+          child: Builder(
+            builder: (innerContext) {
+              return Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: MainThemeStyle.of(innerContext).headerColor,
+                    height: 100,
+                  ),
+                  Container(
+                    width: MediaQuery.of(innerContext).size.width,
+                    decoration: BoxDecoration(
+                      color: MainThemeStyle.of(innerContext).bgColor,
                     ),
+                    child: Center(
+                      child: Text(
+                        state.toString(),
+                        style: TextStyle(
+                          color: MainThemeStyle.of(innerContext).textColor,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    color: MainThemeStyle.of(innerContext).bgColor,
+                    height: isBig
+                        ? MediaQuery.of(context).size.height - 454
+                        : MediaQuery.of(context).size.height - 416,
+                    child: GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          isBig = !isBig;
+                        });
+                      },
+                      child: !isBig
+                          ? SizedBox(
+                              child: CustomPaint(
+                                willChange: true,
+                                painter: isBig
+                                    ? WeatherPainter(state: state)
+                                    : WeatherPainter(state: state),
+                              ),
+                            )
+                          : SizedBox(
+                              child: CustomPaint(
+                                willChange: true,
+                                painter: isBig
+                                    ? WeatherPainterBig(state: state)
+                                    : WeatherPainterBig(state: state),
+                              ),
+                            ),
+                    ),
+                  ),
+                  if (isBig)
                     Container(
-                      width: MediaQuery.of(innerContext).size.width,
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
                         color: MainThemeStyle.of(innerContext).bgColor,
                       ),
-                      child: Center(
-                        child: Text(
-                          state.toString(),
-                          style: TextStyle(
-                            color: MainThemeStyle.of(innerContext).textColor,
-                          ),
-                        ),
+                      child: Text(
+                        "Weather today $state",
+                        style: TextStyle(
+                            fontSize: 32,
+                            color: MainThemeStyle.of(innerContext).textColor),
                       ),
                     ),
-                    Container(
-                      width: MediaQuery.of(context).size.width,
+                  Container(
+                    height: 140,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
                       color: MainThemeStyle.of(innerContext).bgColor,
-                      height: MediaQuery.of(context).size.height - 260,
-                      child: GestureDetector(
-                        onTap: () {
-                          setState(() {
-                            isBig = !isBig;
-                          });
-                        },
-                        child: SizedBox(
-                          child: CustomPaint(
-                            willChange: true,
-                            painter: isBig
-                                ? WeatherPainter(state: state)
-                                : WeatherPainter(state: state),
-                          ),
-                        ),
-                      ),
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Container(
-                          height: 80,
-                          width: MediaQuery.of(context).size.width,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: MainThemeStyle.of(innerContext).bgColor,
-                            ),
-                            child: ListView(
-                              scrollDirection: Axis.horizontal,
-                              children: [
-                                ...data.map(
-                                  (e) => Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 2, vertical: 3),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        color: MainThemeStyle.of(innerContext)
-                                            .headerColor,
-                                      ),
-                                      width:
-                                          MediaQuery.of(context).size.width / 5,
-                                      child: ListTile(
-                                        onTap: () {
-                                          setState(() {
-                                            state = e;
-                                          });
-                                        },
-                                        title: Center(
-                                          child: Text(e.toString()),
-                                        ),
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Container(
+                        height: 80,
+                        width: MediaQuery.of(context).size.width,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: MainThemeStyle.of(innerContext).bgColor,
+                          ),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              ...data.map(
+                                (e) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 2, vertical: 3),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      color: MainThemeStyle.of(innerContext)
+                                          .headerColor,
+                                    ),
+                                    width:
+                                        MediaQuery.of(context).size.width / 5,
+                                    child: ListTile(
+                                      onTap: () {
+                                        setState(() {
+                                          state = e;
+                                        });
+                                      },
+                                      title: Center(
+                                        child: Text(e.toString()),
                                       ),
                                     ),
                                   ),
                                 ),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        )
-                      ],
+                        ),
+                      )
+                    ],
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      color: MainThemeStyle.of(innerContext).bgColor,
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        color: MainThemeStyle.of(innerContext).bgColor,
-                      ),
-                      height: 80,
-                      width: MediaQuery.of(context).size.width,
-                    )
-                  ],
-                );
-              },
-            ),
+                    height: 80,
+                    width: MediaQuery.of(context).size.width,
+                  )
+                ],
+              );
+            },
           ),
         ),
         floatingActionButton: MainThemeStyle(
