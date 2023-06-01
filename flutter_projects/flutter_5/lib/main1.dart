@@ -112,14 +112,87 @@ class _MyApp extends State<MyApp> with SingleTickerProviderStateMixin {
           ),
           body: TabBarView(controller: _tabController, children: [
             Container(
-              color: Colors.green,
-              child: const Center(
-                child: Text(
-                  "Home",
-                  style: TextStyle(
-                    fontSize: 20,
+              // color: Colors.green,
+              child: ListView(
+                children: const [
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
                   ),
-                ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsets.all(8.0),
+                    child: ListTile(
+                      tileColor: Colors.blue,
+                      leading: Text("1"),
+                    ),
+                  ),
+                ],
               ),
             ),
             Container(

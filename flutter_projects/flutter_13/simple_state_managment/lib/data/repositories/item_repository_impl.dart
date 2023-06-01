@@ -6,11 +6,11 @@ class ItemRepositoryImpl implements ItemRepository {
   @override
   Future<List<ItemModel>> getAllItems() async {
     List<ItemModel> listOfItems = [];
-    await File('D:/flutter_course/flutter_13/simple_state_managment/lib/data/items.json')
-      .readAsString()
-      .then((fileContents) => listOfItems = itemModelFromJson(fileContents));
+    await File(
+            'D:\SkillBox\Dart_basics\flutter_projects\flutter_13\simple_state_managment\lib\data\items.json')
+        .readAsString()
+        .then((fileContents) => listOfItems = itemModelFromJson(fileContents));
 
     return listOfItems;
   }
-  
 }
