@@ -1,0 +1,9 @@
+# ninja log v5
+0	66	708611017	CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c.o	c04feee2f146429d
+66	126	708611017	D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so	ccd4a52e3a7a716c
+1	82	708613135	CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c.o	c04feee2f146429d
+82	150	708613135	D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so	ccd4a52e3a7a716c
+0	116	708614671	CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.cpp.o	bdcb73fb0544e26b
+116	167	708614671	D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so	74bd7ae5995d192e
+1	48	708614862	CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c.o	c04feee2f146429d
+48	107	708614862	D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so	ccd4a52e3a7a716c

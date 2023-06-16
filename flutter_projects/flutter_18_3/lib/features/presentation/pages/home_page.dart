@@ -11,7 +11,6 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final TextEditingController _controller = TextEditingController();
   late InAppWebViewController _webViewController;
-  // final InAppLocalhostServer _localhostServer = InAppLocalhostServer();
   InAppWebViewGroupOptions options = InAppWebViewGroupOptions(
     crossPlatform: InAppWebViewOptions(
       useShouldOverrideUrlLoading: true,
