@@ -1,0 +1,3 @@
+LIBRARY   src
+EXPORTS
+   get_value_s

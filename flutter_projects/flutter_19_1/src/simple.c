@@ -6,7 +6,6 @@ int get_value_s (char* a){
     return strlen(a);
 }
 
-
 int get_value( )
 {
     srand(time(NULL));

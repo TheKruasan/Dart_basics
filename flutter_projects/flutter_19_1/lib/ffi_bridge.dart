@@ -1,6 +1,7 @@
 import 'dart:ffi';
 import 'dart:io';
 import 'package:ffi/ffi.dart';
+import 'package:path/path.dart' as path;
 
 typedef SimpleFunction = Int16 Function();
 typedef SimpleFunctionDart = int Function();
@@ -13,12 +14,20 @@ class FFIBridge {
   FFIBridge() {
     final dl = Platform.isAndroid
         ? DynamicLibrary.open('libsimple.so')
-        : DynamicLibrary.process();
+        : Platform.isWindows
+            ? DynamicLibrary.open(
+                path.join(Directory.current.path, 'Debug', 'simple.dll'))
+            : DynamicLibrary.process();
+
     _getCValue =
         dl.lookupFunction<SimpleFunction, SimpleFunctionDart>("get_value");
     _get_value_s =
         dl.lookupFunction<SimpleFunctionS, SimpleFunctionDartS>("get_value_s");
+
+    // _get_value_s =
+    //     dl.lookup<NativeFunction<SimpleFunctionS>>('get_value_s').asFunction();
   }
+
   int getCValue() => _getCValue();
   int get_value_s(String s) {
     var sc = s.toNativeUtf8();
