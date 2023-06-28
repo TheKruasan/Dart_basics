@@ -34,42 +34,6 @@ CONFIGURATION = Debug
 
 include CMakeFiles/rules.ninja
 
-# =============================================================================
-# Object build statements for SHARED_LIBRARY target simple
-
-
-#############################################
-# Order-only phony target for simple
-
-build cmake_object_order_depends_target_simple: phony || CMakeFiles/simple.dir
-
-build CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c.o: C_COMPILER__simple_Debug D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c || cmake_object_order_depends_target_simple
-  DEFINES = -Dsimple_EXPORTS
-  DEP_FILE = CMakeFiles\simple.dir\D_\SkillBox\Dart_basics\flutter_projects\flutter_19_1\src\simple.c.o.d
-  FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC
-  OBJECT_DIR = CMakeFiles\simple.dir
-  OBJECT_FILE_DIR = CMakeFiles\simple.dir\D_\SkillBox\Dart_basics\flutter_projects\flutter_19_1\src
-
-
-# =============================================================================
-# Link build statements for SHARED_LIBRARY target simple
-
-
-#############################################
-# Link the shared library D:\SkillBox\Dart_basics\flutter_projects\flutter_19_1\build\app\intermediates\cxx\Debug\1f6cr6c7\obj\x86\libsimple.so
-
-build D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so: C_SHARED_LIBRARY_LINKER__simple_Debug CMakeFiles/simple.dir/D_/SkillBox/Dart_basics/flutter_projects/flutter_19_1/src/simple.c.o
-  LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info
-  LINK_FLAGS = -static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
-  LINK_LIBRARIES = -latomic -lm
-  OBJECT_DIR = CMakeFiles\simple.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  SONAME = libsimple.so
-  SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = D:\SkillBox\Dart_basics\flutter_projects\flutter_19_1\build\app\intermediates\cxx\Debug\1f6cr6c7\obj\x86\libsimple.so
-  TARGET_PDB = simple.so.dbg
-
 
 #############################################
 # Utility command for edit_cache
@@ -96,10 +60,6 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build libsimple.so: phony D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so
-
-build simple: phony D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so
-
 # =============================================================================
 # Folder targets.
 
@@ -108,7 +68,7 @@ build simple: phony D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build
 #############################################
 # Folder: D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/android/app/.cxx/Debug/1f6cr6c7/x86
 
-build all: phony D$:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/build/app/intermediates/cxx/Debug/1f6cr6c7/obj/x86/libsimple.so
+build all: phony
 
 # =============================================================================
 # Built-in targets

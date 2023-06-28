@@ -1,3 +1,2 @@
-D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/android/app/.cxx/Debug/1f6cr6c7/armeabi-v7a/CMakeFiles/simple.dir
 D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/android/app/.cxx/Debug/1f6cr6c7/armeabi-v7a/CMakeFiles/edit_cache.dir
 D:/SkillBox/Dart_basics/flutter_projects/flutter_19_1/android/app/.cxx/Debug/1f6cr6c7/armeabi-v7a/CMakeFiles/rebuild_cache.dir

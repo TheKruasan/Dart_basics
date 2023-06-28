@@ -12,13 +12,14 @@ class FFIBridge {
   late SimpleFunctionDart _getCValue;
   late SimpleFunctionDartS _get_value_s;
   FFIBridge() {
-    final dl = Platform.isAndroid
-        ? DynamicLibrary.open('libsimple.so')
-        : Platform.isWindows
-            ? DynamicLibrary.open(
-                path.join(Directory.current.path, 'Debug', 'simple.dll'))
-            : DynamicLibrary.process();
+    var libraryPath =
+        path.join(Directory.current.path, 'simple_library', 'libsimple.so');
 
+    if (Platform.isWindows) {
+      libraryPath = path.join(
+          Directory.current.path, 'simple_library', 'Debug', 'simple.dll');
+    }
+    final dl = DynamicLibrary.open(libraryPath);
     _getCValue =
         dl.lookupFunction<SimpleFunction, SimpleFunctionDart>("get_value");
     _get_value_s =
